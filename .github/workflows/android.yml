@@ -33,6 +33,13 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
+      - name: set up JDK 11 # Downloading and setting up the requested version of Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: gradle
+
       - name: Run Instrumentation Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
