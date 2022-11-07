@@ -9,11 +9,11 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # run our actions on a Ubuntu Host Server of latest version(20.4)
 
     steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 11
+    - uses: actions/checkout@v3 # checks-out our repository under $GITHUB_WORKSPACE, so your workflow can access it
+    - name: set up JDK 11 # Downloading and setting up the requested version of Java
       uses: actions/setup-java@v3
       with:
         java-version: '11'
@@ -22,5 +22,9 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: Android Lint
+      run: ./gradlew lint
+    - name: Run Instrumentation Tests
+      run: ./gradlew :app:connectedAndroidTest
     - name: Build with Gradle
       run: ./gradlew build
