@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.navigation
+package com.example.w2_marinusveit.navigation
 
 import android.content.Context
 import android.os.Bundle
@@ -25,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.android.navigation.databinding.FragmentGameBinding
+import com.example.w2_marinusveit.navigation.databinding.FragmentGameBinding
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

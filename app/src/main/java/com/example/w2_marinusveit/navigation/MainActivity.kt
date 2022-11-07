@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.navigation
+package com.example.w2_marinusveit.navigation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +22,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.android.navigation.databinding.ActivityMainBinding
+import com.example.w2_marinusveit.navigation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
