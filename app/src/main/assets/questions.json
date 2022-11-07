@@ -1,0 +1,65 @@
+[
+  {
+    "text": "Was ist Kotlin?",
+    "answers": [
+      "statisch typisierte Programmiersprache",
+      "Grammatik",
+      "Lebenseinstellung",
+      "Bibliothek"
+    ]
+  },
+  {
+    "text": "Wer hat Kotlin entwickelt?",
+    "answers": [
+      "JetBrains",
+      "Schiedermeier",
+      "Weihnachtsmann",
+      "Niemand"
+    ]
+  },
+  {
+    "text": "Wie schreibt man Kotlin?",
+    "answers": [
+      "Wie in der Frage",
+      "Kottlin",
+      "Gotlin",
+      "Katelin"
+    ]
+  },
+  {
+    "text": "Welche File-Extension besitzt Kotlin?",
+    "answers": [
+      ".kt",
+      ".kot",
+      ".k",
+      ".kotlin"
+    ]
+  },
+  {
+    "text": "Wie kann eine Variable in Kotlin definiert werden?",
+    "answers": [
+      "val, var",
+      "value, variable",
+      "def",
+      "fun"
+    ]
+  },
+  {
+    "text": "Was ist der Unterschied zwischen val und var",
+    "answers": [
+      "val read only",
+      "var read only",
+      "val write only",
+      "var write only"
+    ]
+  },
+  {
+    "text": "Was macht der '?:' Operator",
+    "answers": [
+      "Wert rechts vom Operator zurückgeben, falls die geprüfte Referenz null ist",
+      "Nichts",
+      "Hommage an Elvis",
+      "Syntax soll schöner werden"
+    ]
+  }
+]
