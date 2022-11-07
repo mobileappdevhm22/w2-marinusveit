@@ -11,7 +11,7 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(androidx.test.runner.AndroidJUnit4::class)
-class ExamplePipelineUnitTest {
+class ExampleInstrumentationTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
