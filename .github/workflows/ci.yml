@@ -2,17 +2,16 @@ name: Android CI
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches: [ "**" ] # run ci pipeline on any commit pushed on any branch
+
 
 jobs:
-  build:
-
+  build: # build job
     runs-on: ubuntu-latest # run our actions on a Ubuntu Host Server of latest version(20.4)
 
     steps:
-      - uses: actions/checkout@v3 # checks-out our repository under $GITHUB_WORKSPACE, so your workflow can access it
+      - name: checkout repo
+        uses: actions/checkout@v3 # Checkout the commit that triggered the workflow
       - name: set up JDK 11 # Downloading and setting up the requested version of Java
         uses: actions/setup-java@v3
         with:
@@ -22,8 +21,10 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
       - name: Android Lint
         run: ./gradlew lint
+
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -31,7 +32,7 @@ jobs:
     runs-on: macOS-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: set up JDK 11 # Downloading and setting up the requested version of Java
         uses: actions/setup-java@v3
@@ -42,6 +43,12 @@ jobs:
 
       - name: Run Unit Tests
         run: ./gradlew test
+
+      - name: Unit tests results
+        uses: actions/upload-artifact@v3
+        with:
+          name: unit-tests-results
+          path: app/build/reports/tests/testDebugUnitTest/index.html
 
       - name: Run Instrumentation Tests
         uses: reactivecircus/android-emulator-runner@v2
