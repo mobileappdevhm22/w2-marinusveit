@@ -53,10 +53,10 @@ jobs:
 
       - name: Test Report
         uses: dorny/test-reporter@v1
-        if: always()# run this step even if previous step failed
+        if: always() # run this step even if previous step failed
         with:
           name: JUnit Tests
-          path: app/build/test-results/testDevDebugUnitTest/TEST-*.xml# Path to test results
+          path: app/build/test-results/testDevDebugUnitTest/TEST-*.xml # Path to test results
           reporter: java-junit # Format of test results
           fail-on-error: false
 
@@ -66,8 +66,8 @@ jobs:
         with:
           report_paths: '**/build/test-results/test/TEST-*.xml'
 
-      - name: Run Instrumentation Tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          script: ./gradlew connectedAndroidTest
+#      - name: Run Instrumentation Tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 29
+#          script: ./gradlew connectedAndroidTest
