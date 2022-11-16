@@ -44,11 +44,27 @@ jobs:
       - name: Run Unit Tests
         run: ./gradlew test
 
-      - name: Unit tests results
+      - name: Upload test results
+        if: success() || failure()
         uses: actions/upload-artifact@v3
         with:
-          name: unit-tests-results
-          path: app/build/reports/tests/testDebugUnitTest/index.html
+          name: test-results
+          path: __tests__/__results__/*.xml
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: always()# run this step even if previous step failed
+        with:
+          name: JUnit Tests
+          path: app/build/test-results/testDevDebugUnitTest/TEST-*.xml# Path to test results
+          reporter: java-junit # Format of test results
+          fail-on-error: false
+
+      - name: JUnit Report Action
+        uses: mikepenz/action-junit-report@v3.5.2
+        if: always() # always run even if the previous step fails
+        with:
+          report_paths: '**/build/test-results/test/TEST-*.xml'
 
       - name: Run Instrumentation Tests
         uses: reactivecircus/android-emulator-runner@v2
