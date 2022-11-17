@@ -23,8 +23,6 @@ jobs:
         run: chmod +x gradlew
 
       - name: Assemble and Deploy
-        run: |
-          export RELEASE_NOTE=$(git log -1 --pretty=format:"Time: %ad%nHash: %h%nAuthor: %an <%ae>%nMessage: %s")
-          ./gradlew assembleProductionRelease appDistributionUploadProductionRelease
+        run: ./gradlew assembleDebug appDistributionUploadProductionDebug
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
